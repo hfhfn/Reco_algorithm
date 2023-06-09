@@ -103,7 +103,7 @@
         "insert-logo": 
         {
             "url": "img/self_logo.jpg",
-            "style": "background: none; max-height: 30px; min-height: 30px"
+            "style": "background: none; max-height: 129px; min-height: 30px"
         },
         "favicon": "img/self_logo.jpg",
         "prism": 
