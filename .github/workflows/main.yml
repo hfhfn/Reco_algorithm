@@ -1,0 +1,52 @@
+name: auto-generate-gitbook
+on:                                 
+  # 如果同时使用 branches 筛选器和 paths 筛选器，则工作流将只在这两个筛选器都满足条件时运行。
+  # 例如，仅在将包含 (.md 或者 .json) 文件更改的推送发送到名称以 master/ 开头的分支时，以下工作流才会运行
+  push:
+    branches:
+    - master
+    paths:
+      # - '**.md'
+      ['**.md', '**.json']
+
+jobs:
+  main-to-gh-pages:
+    runs-on: ubuntu-latest
+
+    steps:                          
+    - name: checkout master
+      uses: actions/checkout@v2
+      with:
+        ref: master
+
+    - name: install nodejs
+      uses: actions/setup-node@v1
+
+    - name: configue gitbook
+      run: |
+        npm install -g gitbook-cli          
+        gitbook install
+        npm install -g gitbook-summary
+
+    - name: generate _book folder
+      run: |
+        # book sm                      # 自动生成 SUMMARY.md 文件
+        gitbook build
+        cp SUMMARY.md _book
+
+    - name: push _book to branch gh-pages 
+      env:
+        TOKEN: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        REF: github.com/${{ github.repository }}.git
+        MYEMAIL: hfhfn@sina.com                  # ！！记得修改为自己github设置的邮箱
+        MYNAME: ${{ github.repository_owner }}          
+      run: |
+        cd _book
+        git config --global user.email "${MYEMAIL}"
+        git config --global user.name "${MYNAME}"
+        git init
+        git remote add origin https://${REF}
+        git add . 
+        git commit -m "Updated By Github Actions With Build ${{github.run_number}} of ${{github.workflow}} For Github Pages"
+        git branch -M master
+        git push --force --quiet "https://${TOKEN}@${REF}" master:gh-pages

@@ -1,0 +1,1159 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>基于回归模型的协同过滤 · GitBook Handbook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="feihu han <hfhfn@sina.com>">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="04_基于矩阵分解的协同过滤推荐.html" />
+    
+    
+    <link rel="prev" href="02_基于K最近邻的协同过滤推荐.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://smoothies.com.cn/gitbook-docs/Gitbook/1_Gitbook_Get_Started.html" target="_blank" class="custom-link">Gitbook docs</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        <li class="header">前言</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">基础推荐算法</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="01_基于模型的协同过滤推荐.html">
+            
+                <a href="01_基于模型的协同过滤推荐.html">
+            
+                    
+                    基于模型的协同过滤
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="02_基于K最近邻的协同过滤推荐.html">
+            
+                <a href="02_基于K最近邻的协同过滤推荐.html">
+            
+                    
+                    基于K近邻的协同过滤
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.2" data-path="03_基于回归模型的协同过滤推荐.html">
+            
+                <a href="03_基于回归模型的协同过滤推荐.html">
+            
+                    
+                    基于回归模型的协同过滤
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="04_基于矩阵分解的协同过滤推荐.html">
+            
+                <a href="04_基于矩阵分解的协同过滤推荐.html">
+            
+                    
+                    基于矩阵分解的协同过滤
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.3.1" data-path="05_LFM算法实现.html">
+            
+                <a href="05_LFM算法实现.html">
+            
+                    
+                    LFM算法实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3.2" data-path="06_BiasSVD算法实现.html">
+            
+                <a href="06_BiasSVD算法实现.html">
+            
+                    
+                    biasSVD算法实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="07_基于内容的推荐算法.html">
+            
+                <a href="07_基于内容的推荐算法.html">
+            
+                    
+                    基于内容的推荐算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="08_电影推荐ContentBased_物品画像.html">
+            
+                <a href="08_电影推荐ContentBased_物品画像.html">
+            
+                    
+                    物品画像
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="09_电影推荐ContentBased_用户画像.html">
+            
+                <a href="09_电影推荐ContentBased_用户画像.html">
+            
+                    
+                    用户画像
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="10_电影推荐ContentBased_TOP-N用户推荐.html">
+            
+                <a href="10_电影推荐ContentBased_TOP-N用户推荐.html">
+            
+                    
+                    topN推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="11_电影推荐ContentBased_物品冷启动处理.html">
+            
+                <a href="11_电影推荐ContentBased_物品冷启动处理.html">
+            
+                    
+                    冷启动处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >基于回归模型的协同过滤</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><li><span class="title-icon "></span><a href="#&#x57FA;&#x4E8E;&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x7684;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x63A8;&#x8350;"><b></b>&#x57FA;&#x4E8E;&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x7684;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x63A8;&#x8350;</a></li></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><div class="treeview__container"><ul>
+<li><div><a href="#baseline&#xFF1A;&#x57FA;&#x51C6;&#x9884;&#x6D4B;">Baseline&#xFF1A;&#x57FA;&#x51C6;&#x9884;&#x6D4B;</a><i></i></div></li>
+<li><div><a href="#&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x4F18;&#x5316;">&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x4F18;&#x5316;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li> 
+<ul>
+<li><div><a href="#step-1&#xFF1A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x63A8;&#x5BFC;">step 1&#xFF1A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x63A8;&#x5BFC;</a><i></i></div></li>
+<li><div><a href="#step-2&#xFF1A;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;">step 2&#xFF1A;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;</a><i></i></div></li>
+<li><div><a href="#step-3&#xFF1A;&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;">step 3&#xFF1A;&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;</a><i></i></div></li>
+<li><div><a href="#step-4-&#x51C6;&#x786E;&#x6027;&#x6307;&#x6807;&#x8BC4;&#x4F30;">Step 4: &#x51C6;&#x786E;&#x6027;&#x6307;&#x6807;&#x8BC4;&#x4F30;</a><i></i></div></li>
+</ul></li>
+</ul></li>
+<li><div><a href="#&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x4F18;&#x5316;">&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x4F18;&#x5316;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li> 
+<ul>
+<li><div><a href="#step-1-&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x63A8;&#x5BFC;">step 1: &#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x63A8;&#x5BFC;</a><i></i></div></li>
+<li><div><a href="#step-2-&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x5E94;&#x7528;">step 2: &#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x5E94;&#x7528;</a><i></i></div></li>
+<li><div><a href="#step-3-&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;">step 3: &#x7B97;&#x6CD5;&#x5B9E;&#x73B0;</a><i></i></div></li>
+<li><div><a href="#step-4-&#x51C6;&#x786E;&#x6027;&#x6307;&#x6807;&#x8BC4;&#x4F30;">Step 4: &#x51C6;&#x786E;&#x6027;&#x6307;&#x6807;&#x8BC4;&#x4F30;</a><i></i></div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+
+<h2 id="&#x57FA;&#x4E8E;&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x7684;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x63A8;&#x8350;"><a name="&#x57FA;&#x4E8E;&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x7684;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x63A8;&#x8350;" class="anchor-navigation-ex-anchor" href="#&#x57FA;&#x4E8E;&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x7684;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x63A8;&#x8350;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x57FA;&#x4E8E;&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x7684;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x63A8;&#x8350;" class="plugin-anchor" href="#&#x57FA;&#x4E8E;&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x7684;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x63A8;&#x8350;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x57FA;&#x4E8E;&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x7684;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x63A8;&#x8350;</h2>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5C06;&#x8BC4;&#x5206;&#x770B;&#x4F5C;&#x662F;&#x4E00;&#x4E2A;&#x8FDE;&#x7EED;&#x7684;&#x503C;&#x800C;&#x4E0D;&#x662F;&#x79BB;&#x6563;&#x7684;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x53EF;&#x4EE5;&#x501F;&#x52A9;&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x601D;&#x60F3;&#x6765;&#x9884;&#x6D4B;&#x76EE;&#x6807;&#x7528;&#x6237;&#x5BF9;&#x67D0;&#x7269;&#x54C1;&#x7684;&#x8BC4;&#x5206;&#x3002;&#x5176;&#x4E2D;&#x4E00;&#x79CD;&#x5B9E;&#x73B0;&#x7B56;&#x7565;&#x88AB;&#x79F0;&#x4E3A;Baseline&#xFF08;&#x57FA;&#x51C6;&#x9884;&#x6D4B;&#xFF09;&#x3002;</p>
+<h4 id="baseline&#xFF1A;&#x57FA;&#x51C6;&#x9884;&#x6D4B;"><a name="baseline&#xFF1A;&#x57FA;&#x51C6;&#x9884;&#x6D4B;" class="anchor-navigation-ex-anchor" href="#baseline&#xFF1A;&#x57FA;&#x51C6;&#x9884;&#x6D4B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="baseline&#xFF1A;&#x57FA;&#x51C6;&#x9884;&#x6D4B;" class="plugin-anchor" href="#baseline&#xFF1A;&#x57FA;&#x51C6;&#x9884;&#x6D4B;"><i class="fa fa-link" aria-hidden="true"></i></a>Baseline&#xFF1A;&#x57FA;&#x51C6;&#x9884;&#x6D4B;</h4>
+<p>Baseline&#x8BBE;&#x8BA1;&#x601D;&#x60F3;&#x57FA;&#x4E8E;&#x4EE5;&#x4E0B;&#x7684;&#x5047;&#x8BBE;&#xFF1A;</p>
+<ul>
+<li>&#x6709;&#x4E9B;&#x7528;&#x6237;&#x7684;&#x8BC4;&#x5206;&#x666E;&#x904D;&#x9AD8;&#x4E8E;&#x5176;&#x4ED6;&#x7528;&#x6237;&#xFF0C;&#x6709;&#x4E9B;&#x7528;&#x6237;&#x7684;&#x8BC4;&#x5206;&#x666E;&#x904D;&#x4F4E;&#x4E8E;&#x5176;&#x4ED6;&#x7528;&#x6237;&#x3002;&#x6BD4;&#x5982;&#x6709;&#x4E9B;&#x7528;&#x6237;&#x5929;&#x751F;&#x613F;&#x610F;&#x7ED9;&#x522B;&#x4EBA;&#x597D;&#x8BC4;&#xFF0C;&#x5FC3;&#x6148;&#x624B;&#x8F6F;&#xFF0C;&#x6BD4;&#x8F83;&#x597D;&#x8BF4;&#x8BDD;&#xFF0C;&#x800C;&#x6709;&#x7684;&#x4EBA;&#x5C31;&#x6BD4;&#x8F83;&#x82DB;&#x523B;&#xFF0C;&#x603B;&#x662F;&#x8BC4;&#x5206;&#x4E0D;&#x8D85;&#x8FC7;3&#x5206;&#xFF08;5&#x5206;&#x6EE1;&#x5206;&#xFF09;</li>
+<li>&#x4E00;&#x4E9B;&#x7269;&#x54C1;&#x7684;&#x8BC4;&#x5206;&#x666E;&#x904D;&#x9AD8;&#x4E8E;&#x5176;&#x4ED6;&#x7269;&#x54C1;&#xFF0C;&#x4E00;&#x4E9B;&#x7269;&#x54C1;&#x7684;&#x8BC4;&#x5206;&#x666E;&#x904D;&#x4F4E;&#x4E8E;&#x5176;&#x4ED6;&#x7269;&#x54C1;&#x3002;&#x6BD4;&#x5982;&#x4E00;&#x4E9B;&#x7269;&#x54C1;&#x4E00;&#x88AB;&#x751F;&#x4EA7;&#x4FBF;&#x51B3;&#x5B9A;&#x4E86;&#x5B83;&#x7684;&#x5730;&#x4F4D;&#xFF0C;&#x6709;&#x7684;&#x6BD4;&#x8F83;&#x53D7;&#x4EBA;&#x4EEC;&#x6B22;&#x8FCE;&#xFF0C;&#x6709;&#x7684;&#x5219;&#x88AB;&#x4EBA;&#x5ACC;&#x5F03;&#x3002;</li>
+</ul>
+<p>&#x8FD9;&#x4E2A;&#x7528;&#x6237;&#x6216;&#x7269;&#x54C1;&#x666E;&#x904D;&#x9AD8;&#x4E8E;&#x6216;&#x4F4E;&#x4E8E;&#x5E73;&#x5747;&#x503C;&#x7684;&#x5DEE;&#x503C;&#xFF0C;&#x6211;&#x4EEC;&#x79F0;&#x4E3A;&#x504F;&#x7F6E;(bias)</p>
+<p><strong>Baseline&#x76EE;&#x6807;&#xFF1A;</strong></p>
+<ul>
+<li>&#x627E;&#x51FA;&#x6BCF;&#x4E2A;&#x7528;&#x6237;&#x666E;&#x904D;&#x9AD8;&#x4E8E;&#x6216;&#x4F4E;&#x4E8E;&#x4ED6;&#x4EBA;&#x7684;&#x504F;&#x7F6E;&#x503C; <script type="math/tex; ">b_u</script></li>
+<li>&#x627E;&#x51FA;&#x6BCF;&#x4EF6;&#x7269;&#x54C1;&#x666E;&#x904D;&#x9AD8;&#x4E8E;&#x6216;&#x4F4E;&#x4E8E;&#x5176;&#x4ED6;&#x7269;&#x54C1;&#x7684;&#x504F;&#x7F6E;&#x503C;<script type="math/tex; ">b_i</script></li>
+<li>&#x6211;&#x4EEC;&#x7684;&#x76EE;&#x6807;&#x4E5F;&#x5C31;&#x8F6C;&#x5316;&#x4E3A;&#x5BFB;&#x627E;&#x6700;&#x4F18;&#x7684;<script type="math/tex; ">b_u</script>&#x548C;<script type="math/tex; ">b_i</script></li>
+</ul>
+<p>&#x4F7F;&#x7528;Baseline&#x7684;&#x7B97;&#x6CD5;&#x601D;&#x60F3;&#x9884;&#x6D4B;&#x8BC4;&#x5206;&#x7684;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li><p>&#x8BA1;&#x7B97;&#x6240;&#x6709;&#x7535;&#x5F71;&#x7684;&#x5E73;&#x5747;&#x8BC4;&#x5206;<script type="math/tex; ">\mu</script>&#xFF08;&#x5373;&#x5168;&#x5C40;&#x5E73;&#x5747;&#x8BC4;&#x5206;&#xFF09;</p>
+</li>
+<li><p>&#x8BA1;&#x7B97;&#x6BCF;&#x4E2A;&#x7528;&#x6237;&#x8BC4;&#x5206;&#x4E0E;&#x5E73;&#x5747;&#x8BC4;&#x5206;<script type="math/tex; ">\mu</script>&#x7684;&#x504F;&#x7F6E;&#x503C;<script type="math/tex; ">b_u</script></p>
+</li>
+<li><p>&#x8BA1;&#x7B97;&#x6BCF;&#x90E8;&#x7535;&#x5F71;&#x6240;&#x63A5;&#x53D7;&#x7684;&#x8BC4;&#x5206;&#x4E0E;&#x5E73;&#x5747;&#x8BC4;&#x5206;<script type="math/tex; ">\mu</script>&#x7684;&#x504F;&#x7F6E;&#x503C;<script type="math/tex; ">b_i</script></p>
+</li>
+<li><p>&#x9884;&#x6D4B;&#x7528;&#x6237;&#x5BF9;&#x7535;&#x5F71;&#x7684;&#x8BC4;&#x5206;&#xFF1A;<br>
+<script type="math/tex; ">
+  \hat{r}_{ui} = b_{ui} = \mu + b_u + b_i
+  </script></p>
+</li>
+</ul>
+<p>&#x200B;    </p>
+<p>&#x4E3E;&#x4F8B;&#xFF1A;</p>
+<p>&#x200B;    &#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x60F3;&#x901A;&#x8FC7;Baseline&#x6765;&#x9884;&#x6D4B;&#x7528;&#x6237;A&#x5BF9;&#x7535;&#x5F71;&#x201C;&#x963F;&#x7518;&#x6B63;&#x4F20;&#x201D;&#x7684;&#x8BC4;&#x5206;&#xFF0C;&#x90A3;&#x4E48;&#x9996;&#x5148;&#x8BA1;&#x7B97;&#x51FA;&#x6574;&#x4E2A;&#x8BC4;&#x5206;&#x6570;&#x636E;&#x96C6;&#x7684;&#x5E73;&#x5747;&#x8BC4;&#x5206;<script type="math/tex; ">\mu</script>&#x662F;3.5&#x5206;&#xFF1B;&#x800C;&#x7528;&#x6237;A&#x662F;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x82DB;&#x523B;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x4ED6;&#x7684;&#x8BC4;&#x5206;&#x6BD4;&#x8F83;&#x4E25;&#x683C;&#xFF0C;&#x666E;&#x904D;&#x6BD4;&#x5E73;&#x5747;&#x8BC4;&#x5206;&#x4F4E;0.5&#x5206;&#xFF0C;&#x5373;&#x7528;&#x6237;A&#x7684;&#x504F;&#x7F6E;&#x503C;<script type="math/tex; ">b_i</script>&#x662F;-0.5&#xFF1B;&#x800C;&#x7535;&#x5F71;&#x201C;&#x963F;&#x7518;&#x6B63;&#x4F20;&#x201D;&#x662F;&#x4E00;&#x90E8;&#x6BD4;&#x8F83;&#x70ED;&#x95E8;&#x800C;&#x4E14;&#x5907;&#x53D7;&#x597D;&#x8BC4;&#x7684;&#x7535;&#x5F71;&#xFF0C;&#x5B83;&#x7684;&#x8BC4;&#x5206;&#x666E;&#x904D;&#x6BD4;&#x5E73;&#x5747;&#x8BC4;&#x5206;&#x8981;&#x9AD8;1.2&#x5206;&#xFF0C;&#x90A3;&#x4E48;&#x7535;&#x5F71;&#x201C;&#x963F;&#x7518;&#x6B63;&#x4F20;&#x201D;&#x7684;&#x504F;&#x7F6E;&#x503C;<script type="math/tex; ">b_i</script>&#x662F;+1.2&#xFF0C;&#x56E0;&#x6B64;&#x5C31;&#x53EF;&#x4EE5;&#x9884;&#x6D4B;&#x51FA;&#x7528;&#x6237;A&#x5BF9;&#x7535;&#x5F71;&#x201C;&#x963F;&#x7518;&#x6B63;&#x4F20;&#x201D;&#x7684;&#x8BC4;&#x5206;&#x4E3A;&#xFF1A;<script type="math/tex; ">3.5+(-0.5)+1.2</script>&#xFF0C;&#x4E5F;&#x5C31;&#x662F;4.2&#x5206;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x6240;&#x6709;&#x7535;&#x5F71;&#x7684;&#x5E73;&#x5747;&#x8BC4;&#x5206; <script type="math/tex; ">\mu</script> &#x662F;&#x76F4;&#x63A5;&#x80FD;&#x8BA1;&#x7B97;&#x51FA;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x95EE;&#x9898;&#x5728;&#x4E8E;&#x8981;&#x6D4B;&#x51FA;&#x6BCF;&#x4E2A;&#x7528;&#x6237;&#x7684;<script type="math/tex; ">b_u</script>&#x503C;&#x548C;&#x6BCF;&#x90E8;&#x7535;&#x5F71;&#x7684;<script type="math/tex; ">b_i</script>&#x7684;&#x503C;&#x3002;&#x5BF9;&#x4E8E;&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x5E73;&#x65B9;&#x5DEE;&#x6784;&#x5EFA;&#x635F;&#x5931;&#x51FD;&#x6570;&#x5982;&#x4E0B;&#xFF1A;<br></p>
+<p><script type="math/tex; ">
+\begin{aligned}
+Cost &= \sum_{u,i\in R}(r_{ui}-\hat{r}_{ui})^2
+\\&=\sum_{u,i\in R}(r_{ui}-\mu-b_u-b_i)^2
+\end{aligned}
+</script>
+<img src="img/&#x504F;&#x7F6E;.png" alt=""></p>
+<p>&#x52A0;&#x5165;L2&#x6B63;&#x5219;&#x5316;&#xFF1A;<br></p>
+<p><script type="math/tex; ">
+\begin{aligned}
+Cost=\sum_{u,i\in R}(r_{ui}-\mu-b_u-b_i)^2 + \lambda*(\sum_u {b_u}^2 + \sum_i {b_i}^2)
+\end{aligned}
+</script></p>
+<p>&#x516C;&#x5F0F;&#x89E3;&#x6790;&#xFF1A;</p>
+<ul>
+<li>&#x516C;&#x5F0F;&#x7B2C;&#x4E00;&#x90E8;&#x5206;<script type="math/tex; ">\sum_{u,i\in R}(r_{ui}-\mu-b_u-b_i)^2</script>&#x662F;&#x7528;&#x6765;&#x5BFB;&#x627E;&#x4E0E;&#x5DF2;&#x77E5;&#x8BC4;&#x5206;&#x6570;&#x636E;&#x62DF;&#x5408;&#x6700;&#x597D;&#x7684;<script type="math/tex; ">b_u</script>&#x548C;<script type="math/tex; ">b_i</script></li>
+<li>&#x516C;&#x5F0F;&#x7B2C;&#x4E8C;&#x90E8;&#x5206;<script type="math/tex; ">\lambda*(\sum_u {b_u}^2 + \sum_i {b_i}^2)</script>&#x662F;&#x6B63;&#x5219;&#x5316;&#x9879;&#xFF0C;&#x7528;&#x4E8E;&#x907F;&#x514D;&#x8FC7;&#x62DF;&#x5408;&#x73B0;&#x8C61;</li>
+</ul>
+<p>&#x5BF9;&#x4E8E;&#x6700;&#x5C0F;&#x8FC7;&#x7A0B;&#x7684;&#x6C42;&#x89E3;&#xFF0C;&#x6211;&#x4EEC;&#x4E00;&#x822C;&#x91C7;&#x7528;<strong>&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;</strong>&#x6216;&#x8005;<strong>&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;</strong>&#x6765;&#x4F18;&#x5316;&#x5B9E;&#x73B0;&#x3002;</p>
+<h4 id="&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x4F18;&#x5316;"><a name="&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x4F18;&#x5316;" class="anchor-navigation-ex-anchor" href="#&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x4F18;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x4F18;&#x5316;" class="plugin-anchor" href="#&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x4F18;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x4F18;&#x5316;</h4>
+<p>&#x4F7F;&#x7528;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x4F18;&#x5316;&#x7B97;&#x6CD5;&#x9884;&#x6D4B;Baseline&#x504F;&#x7F6E;&#x503C;</p>
+<h6 id="step-1&#xFF1A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x63A8;&#x5BFC;"><a name="step-1&#xFF1A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x63A8;&#x5BFC;" class="anchor-navigation-ex-anchor" href="#step-1&#xFF1A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x63A8;&#x5BFC;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="step-1&#xFF1A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x63A8;&#x5BFC;" class="plugin-anchor" href="#step-1&#xFF1A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x63A8;&#x5BFC;"><i class="fa fa-link" aria-hidden="true"></i></a>step 1&#xFF1A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x63A8;&#x5BFC;</h6>
+<p>&#x635F;&#x5931;&#x51FD;&#x6570;&#xFF1A;  </p>
+<p><script type="math/tex; ">
+\begin{aligned}
+&J(\theta)=Cost=f(b_u, b_i)\\
+\\
+&J(\theta)=\sum_{u,i\in R}(r_{ui}-\mu-b_u-b_i)^2 + \lambda*(\sum_u {b_u}^2 + \sum_i {b_i}^2)
+\end{aligned}
+</script></p>
+<p>&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x53C2;&#x6570;&#x66F4;&#x65B0;&#x539F;&#x59CB;&#x516C;&#x5F0F;&#xFF1A;  </p>
+<p><script type="math/tex; ">
+\theta_j:=\theta_j-\alpha\dfrac{\partial }{\partial \theta_j}J(\theta)
+</script></p>
+<p>&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x66F4;&#x65B0;<script type="math/tex; ">b_u</script>:</p>
+<p>&#x200B;    &#x635F;&#x5931;&#x51FD;&#x6570;&#x504F;&#x5BFC;&#x63A8;&#x5BFC;&#xFF1A;  </p>
+<p><script type="math/tex; ">
+\begin{aligned}
+\dfrac{\partial}{\partial b_u} J(\theta)&=\dfrac{\partial}{\partial b_u} f(b_u, b_i)
+\\&=2\sum_{u,i\in R}(r_{ui}-\mu-b_u-b_i)(-1) + 2\lambda{b_u}
+\\&=-2\sum_{u,i\in R}(r_{ui}-\mu-b_u-b_i) + 2\lambda*b_u
+\end{aligned}
+</script></p>
+<p>&#x200B;    <script type="math/tex; ">b_u</script>&#x66F4;&#x65B0;(&#x56E0;&#x4E3A;alpha&#x53EF;&#x4EE5;&#x4EBA;&#x4E3A;&#x63A7;&#x5236;&#xFF0C;&#x6240;&#x4EE5;2&#x53EF;&#x4EE5;&#x7701;&#x7565;&#x6389;)&#xFF1A;  </p>
+<p><script type="math/tex; ">
+\begin{aligned}
+b_u&:=b_u - \alpha*(-\sum_{u,i\in R}(r_{ui}-\mu-b_u-b_i) + \lambda * b_u)\\
+&:=b_u + \alpha*(\sum_{u,i\in R}(r_{ui}-\mu-b_u-b_i) - \lambda* b_u)
+\end{aligned}
+</script></p>
+<p>&#x540C;&#x7406;&#x53EF;&#x5F97;&#xFF0C;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x66F4;&#x65B0;<script type="math/tex; ">b_i</script>:  </p>
+<p><script type="math/tex; ">
+b_i:=b_i + \alpha*(\sum_{u,i\in R}(r_{ui}-\mu-b_u-b_i) -\lambda*b_i)
+</script></p>
+<h6 id="step-2&#xFF1A;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;"><a name="step-2&#xFF1A;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;" class="anchor-navigation-ex-anchor" href="#step-2&#xFF1A;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="step-2&#xFF1A;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;" class="plugin-anchor" href="#step-2&#xFF1A;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;"><i class="fa fa-link" aria-hidden="true"></i></a>step 2&#xFF1A;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;</h6>
+<p>&#x7531;&#x4E8E;<strong>&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;</strong>&#x672C;&#x8D28;&#x4E0A;&#x5229;&#x7528;<strong>&#x6BCF;&#x4E2A;&#x6837;&#x672C;&#x7684;&#x635F;&#x5931;</strong>&#x6765;&#x66F4;&#x65B0;&#x53C2;&#x6570;&#xFF0C;&#x800C;&#x4E0D;&#x7528;&#x6BCF;&#x6B21;&#x6C42;&#x51FA;&#x5168;&#x90E8;&#x7684;&#x635F;&#x5931;&#x548C;&#xFF0C;&#x56E0;&#x6B64;&#x4F7F;&#x7528;SGD&#x65F6;&#xFF1A;</p>
+<p>&#x5355;&#x6837;&#x672C;&#x635F;&#x5931;&#x503C;&#xFF1A;<br><script type="math/tex; ">
+\begin{aligned}
+error &=r_{ui}-\hat{r}_{ui}
+\\&= r_{ui}-(\mu+b_u+b_i)
+\\&= r_{ui}-\mu-b_u-b_i
+\end{aligned}
+</script></p>
+<p>&#x53C2;&#x6570;&#x66F4;&#x65B0;&#xFF1A;<br><script type="math/tex; ">
+\begin{aligned}
+b_u&:=b_u + \alpha*((r_{ui}-\mu-b_u-b_i) -\lambda*b_u)  \\
+&:=b_u + \alpha*(error - \lambda*b_u) \\
+\\
+b_i&:=b_i + \alpha*((r_{ui}-\mu-b_u-b_i) -\lambda*b_i)\\
+&:=b_i + \alpha*(error -\lambda*b_i)
+\end{aligned}
+</script></p>
+<h6 id="step-3&#xFF1A;&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;"><a name="step-3&#xFF1A;&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#step-3&#xFF1A;&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="step-3&#xFF1A;&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;" class="plugin-anchor" href="#step-3&#xFF1A;&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>step 3&#xFF1A;&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;</h6>
+<pre class="language-"><code class="lang-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+
+<span class="token keyword">class</span> <span class="token class-name">BaselineCFBySGD</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> number_epochs<span class="token punctuation">,</span> alpha<span class="token punctuation">,</span> reg<span class="token punctuation">,</span> columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&quot;uid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;iid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;rating&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># &#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6700;&#x9AD8;&#x8FED;&#x4EE3;&#x6B21;&#x6570;</span>
+        self<span class="token punctuation">.</span>number_epochs <span class="token operator">=</span> number_epochs
+        <span class="token comment"># &#x5B66;&#x4E60;&#x7387;</span>
+        self<span class="token punctuation">.</span>alpha <span class="token operator">=</span> alpha
+        <span class="token comment"># &#x6B63;&#x5219;&#x53C2;&#x6570;</span>
+        self<span class="token punctuation">.</span>reg <span class="token operator">=</span> reg
+        <span class="token comment"># &#x6570;&#x636E;&#x96C6;&#x4E2D;user-item-rating&#x5B57;&#x6BB5;&#x7684;&#x540D;&#x79F0;</span>
+        self<span class="token punctuation">.</span>columns <span class="token operator">=</span> columns
+
+    <span class="token keyword">def</span> <span class="token function">fit</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> dataset<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;
+        :param dataset: uid, iid, rating
+        :return:
+        &apos;&apos;&apos;</span>
+        self<span class="token punctuation">.</span>dataset <span class="token operator">=</span> dataset
+        <span class="token comment"># &#x7528;&#x6237;&#x8BC4;&#x5206;&#x6570;&#x636E;</span>
+        self<span class="token punctuation">.</span>users_ratings <span class="token operator">=</span> dataset<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span>self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>agg<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">list</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">[</span>self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+        <span class="token comment"># &#x7269;&#x54C1;&#x8BC4;&#x5206;&#x6570;&#x636E;</span>
+        self<span class="token punctuation">.</span>items_ratings <span class="token operator">=</span> dataset<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span>self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>agg<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">list</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">[</span>self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+        <span class="token comment"># &#x8BA1;&#x7B97;&#x5168;&#x5C40;&#x5E73;&#x5747;&#x5206;</span>
+        self<span class="token punctuation">.</span>global_mean <span class="token operator">=</span> self<span class="token punctuation">.</span>dataset<span class="token punctuation">[</span>self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment"># &#x8C03;&#x7528;sgd&#x65B9;&#x6CD5;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;&#x53C2;&#x6570;</span>
+        self<span class="token punctuation">.</span>bu<span class="token punctuation">,</span> self<span class="token punctuation">.</span>bi <span class="token operator">=</span> self<span class="token punctuation">.</span>sgd<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">sgd</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;
+        &#x5229;&#x7528;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#xFF0C;&#x4F18;&#x5316;bu&#xFF0C;bi&#x7684;&#x503C;
+        :return: bu, bi
+        &apos;&apos;&apos;</span>
+        <span class="token comment"># &#x521D;&#x59CB;&#x5316;bu&#x3001;bi&#x7684;&#x503C;&#xFF0C;&#x5168;&#x90E8;&#x8BBE;&#x4E3A;0</span>
+        bu <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token builtin">zip</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>users_ratings<span class="token punctuation">.</span>index<span class="token punctuation">,</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>users_ratings<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        bi <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token builtin">zip</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>items_ratings<span class="token punctuation">.</span>index<span class="token punctuation">,</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>items_ratings<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>number_epochs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;iter%d&quot;</span> <span class="token operator">%</span> i<span class="token punctuation">)</span>
+            <span class="token keyword">for</span> uid<span class="token punctuation">,</span> iid<span class="token punctuation">,</span> real_rating <span class="token keyword">in</span> self<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>itertuples<span class="token punctuation">(</span>index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                error <span class="token operator">=</span> real_rating <span class="token operator">-</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>global_mean <span class="token operator">+</span> bu<span class="token punctuation">[</span>uid<span class="token punctuation">]</span> <span class="token operator">+</span> bi<span class="token punctuation">[</span>iid<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+                bu<span class="token punctuation">[</span>uid<span class="token punctuation">]</span> <span class="token operator">+=</span> self<span class="token punctuation">.</span>alpha <span class="token operator">*</span> <span class="token punctuation">(</span>error <span class="token operator">-</span> self<span class="token punctuation">.</span>reg <span class="token operator">*</span> bu<span class="token punctuation">[</span>uid<span class="token punctuation">]</span><span class="token punctuation">)</span>
+                bi<span class="token punctuation">[</span>iid<span class="token punctuation">]</span> <span class="token operator">+=</span> self<span class="token punctuation">.</span>alpha <span class="token operator">*</span> <span class="token punctuation">(</span>error <span class="token operator">-</span> self<span class="token punctuation">.</span>reg <span class="token operator">*</span> bi<span class="token punctuation">[</span>iid<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">return</span> bu<span class="token punctuation">,</span> bi
+
+    <span class="token keyword">def</span> <span class="token function">predict</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> uid<span class="token punctuation">,</span> iid<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        predict_rating <span class="token operator">=</span> self<span class="token punctuation">.</span>global_mean <span class="token operator">+</span> self<span class="token punctuation">.</span>bu<span class="token punctuation">[</span>uid<span class="token punctuation">]</span> <span class="token operator">+</span> self<span class="token punctuation">.</span>bi<span class="token punctuation">[</span>iid<span class="token punctuation">]</span>
+        <span class="token keyword">return</span> predict_rating
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&apos;__main__&apos;</span><span class="token punctuation">:</span>
+    dtype <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">&quot;userId&quot;</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>int32<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;movieId&quot;</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>int32<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;rating&quot;</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>float32<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    dataset <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">&quot;datasets/ml-latest-small/ratings.csv&quot;</span><span class="token punctuation">,</span> usecols<span class="token operator">=</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token builtin">dict</span><span class="token punctuation">(</span>dtype<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    bcf <span class="token operator">=</span> BaselineCFBySGD<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;userId&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;movieId&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;rating&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    bcf<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>dataset<span class="token punctuation">)</span>
+
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        uid <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&quot;uid: &quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        iid <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&quot;iid: &quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>bcf<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>uid<span class="token punctuation">,</span> iid<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<h6 id="step-4-&#x51C6;&#x786E;&#x6027;&#x6307;&#x6807;&#x8BC4;&#x4F30;"><a name="step-4-&#x51C6;&#x786E;&#x6027;&#x6307;&#x6807;&#x8BC4;&#x4F30;" class="anchor-navigation-ex-anchor" href="#step-4-&#x51C6;&#x786E;&#x6027;&#x6307;&#x6807;&#x8BC4;&#x4F30;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="step-4-&#x51C6;&#x786E;&#x6027;&#x6307;&#x6807;&#x8BC4;&#x4F30;" class="plugin-anchor" href="#step-4-&#x51C6;&#x786E;&#x6027;&#x6307;&#x6807;&#x8BC4;&#x4F30;"><i class="fa fa-link" aria-hidden="true"></i></a>Step 4: &#x51C6;&#x786E;&#x6027;&#x6307;&#x6807;&#x8BC4;&#x4F30;</h6>
+<ul>
+<li>&#x6DFB;&#x52A0;test&#x65B9;&#x6CD5;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;&#x4E4B;&#x524D;&#x5B9E;&#x73B0;accuary&#x65B9;&#x6CD5;&#x8BA1;&#x7B97;&#x51C6;&#x786E;&#x6027;&#x6307;&#x6807;</li>
+</ul>
+<pre class="language-"><code class="lang-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+<span class="token keyword">def</span> <span class="token function">data_split</span><span class="token punctuation">(</span>data_path<span class="token punctuation">,</span> x<span class="token operator">=</span><span class="token number">0.8</span><span class="token punctuation">,</span> random<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&apos;&apos;&apos;
+    &#x5207;&#x5206;&#x6570;&#x636E;&#x96C6;&#xFF0C; &#x8FD9;&#x91CC;&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x7528;&#x6237;&#x6570;&#x91CF;&#x4FDD;&#x6301;&#x4E0D;&#x53D8;&#xFF0C;&#x5C06;&#x6BCF;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x8BC4;&#x5206;&#x6570;&#x636E;&#x6309;&#x6BD4;&#x4F8B;&#x8FDB;&#x884C;&#x62C6;&#x5206;
+    :param data_path: &#x6570;&#x636E;&#x96C6;&#x8DEF;&#x5F84;
+    :param x: &#x8BAD;&#x7EC3;&#x96C6;&#x7684;&#x6BD4;&#x4F8B;&#xFF0C;&#x5982;x=0.8&#xFF0C;&#x5219;0.2&#x662F;&#x6D4B;&#x8BD5;&#x96C6;
+    :param random: &#x662F;&#x5426;&#x968F;&#x673A;&#x5207;&#x5206;&#xFF0C;&#x9ED8;&#x8BA4;False
+    :return: &#x7528;&#x6237;-&#x7269;&#x54C1;&#x8BC4;&#x5206;&#x77E9;&#x9635;
+    &apos;&apos;&apos;</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5F00;&#x59CB;&#x5207;&#x5206;&#x6570;&#x636E;&#x96C6;...&quot;</span><span class="token punctuation">)</span>
+    <span class="token comment"># &#x8BBE;&#x7F6E;&#x8981;&#x52A0;&#x8F7D;&#x7684;&#x6570;&#x636E;&#x5B57;&#x6BB5;&#x7684;&#x7C7B;&#x578B;</span>
+    dtype <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">&quot;userId&quot;</span><span class="token punctuation">:</span> np<span class="token punctuation">.</span>int32<span class="token punctuation">,</span> <span class="token string">&quot;movieId&quot;</span><span class="token punctuation">:</span> np<span class="token punctuation">.</span>int32<span class="token punctuation">,</span> <span class="token string">&quot;rating&quot;</span><span class="token punctuation">:</span> np<span class="token punctuation">.</span>float32<span class="token punctuation">}</span>
+    <span class="token comment"># &#x52A0;&#x8F7D;&#x6570;&#x636E;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x7528;&#x524D;&#x4E09;&#x5217;&#x6570;&#x636E;&#xFF0C;&#x5206;&#x522B;&#x662F;&#x7528;&#x6237;ID&#xFF0C;&#x7535;&#x5F71;ID&#xFF0C;&#x5DF2;&#x7ECF;&#x7528;&#x6237;&#x5BF9;&#x7535;&#x5F71;&#x7684;&#x5BF9;&#x5E94;&#x8BC4;&#x5206;</span>
+    ratings <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>data_path<span class="token punctuation">,</span> dtype<span class="token operator">=</span>dtype<span class="token punctuation">,</span> usecols<span class="token operator">=</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    testset_index <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token comment"># &#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x6BCF;&#x4E2A;&#x7528;&#x6237;&#x5728;&#x6D4B;&#x8BD5;&#x96C6;&#x548C;&#x8BAD;&#x7EC3;&#x96C6;&#x90FD;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x56E0;&#x6B64;&#x6309;userId&#x805A;&#x5408;</span>
+    <span class="token keyword">for</span> uid <span class="token keyword">in</span> ratings<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">&quot;userId&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">any</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>index<span class="token punctuation">:</span>
+        user_rating_data <span class="token operator">=</span> ratings<span class="token punctuation">.</span>where<span class="token punctuation">(</span>ratings<span class="token punctuation">[</span><span class="token string">&quot;userId&quot;</span><span class="token punctuation">]</span><span class="token operator">==</span>uid<span class="token punctuation">)</span><span class="token punctuation">.</span>dropna<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> random<span class="token punctuation">:</span>
+            <span class="token comment"># &#x56E0;&#x4E3A;&#x4E0D;&#x53EF;&#x53D8;&#x7C7B;&#x578B;&#x4E0D;&#x80FD;&#x88AB; shuffle&#x65B9;&#x6CD5;&#x4F5C;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x5F3A;&#x884C;&#x8F6C;&#x6362;&#x4E3A;&#x5217;&#x8868;</span>
+            index <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>user_rating_data<span class="token punctuation">.</span>index<span class="token punctuation">)</span>
+            np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>shuffle<span class="token punctuation">(</span>index<span class="token punctuation">)</span>    <span class="token comment"># &#x6253;&#x4E71;&#x5217;&#x8868;</span>
+            _index <span class="token operator">=</span> <span class="token builtin">round</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>user_rating_data<span class="token punctuation">)</span> <span class="token operator">*</span> x<span class="token punctuation">)</span>
+            testset_index <span class="token operator">+=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>index<span class="token punctuation">[</span>_index<span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token comment"># &#x5C06;&#x6BCF;&#x4E2A;&#x7528;&#x6237;&#x7684;x&#x6BD4;&#x4F8B;&#x7684;&#x6570;&#x636E;&#x4F5C;&#x4E3A;&#x8BAD;&#x7EC3;&#x96C6;&#xFF0C;&#x5269;&#x4F59;&#x7684;&#x4F5C;&#x4E3A;&#x6D4B;&#x8BD5;&#x96C6;</span>
+            index <span class="token operator">=</span> <span class="token builtin">round</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>user_rating_data<span class="token punctuation">)</span> <span class="token operator">*</span> x<span class="token punctuation">)</span>
+            testset_index <span class="token operator">+=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>user_rating_data<span class="token punctuation">.</span>index<span class="token punctuation">.</span>values<span class="token punctuation">[</span>index<span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+    testset <span class="token operator">=</span> ratings<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>testset_index<span class="token punctuation">]</span>
+    trainset <span class="token operator">=</span> ratings<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>testset_index<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5B8C;&#x6210;&#x6570;&#x636E;&#x96C6;&#x5207;&#x5206;...&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> trainset<span class="token punctuation">,</span> testset
+
+<span class="token keyword">def</span> <span class="token function">accuray</span><span class="token punctuation">(</span>predict_results<span class="token punctuation">,</span> method<span class="token operator">=</span><span class="token string">&quot;all&quot;</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&apos;&apos;&apos;
+    &#x51C6;&#x786E;&#x6027;&#x6307;&#x6807;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;
+    :param predict_results: &#x9884;&#x6D4B;&#x7ED3;&#x679C;&#xFF0C;&#x7C7B;&#x578B;&#x4E3A;&#x5BB9;&#x5668;&#xFF0C;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A;&#x5305;&#x542B;uid,iid,real_rating,pred_rating&#x7684;&#x5E8F;&#x5217;
+    :param method: &#x6307;&#x6807;&#x65B9;&#x6CD5;&#xFF0C;&#x7C7B;&#x578B;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;rmse&#x6216;mae&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;&#x4E24;&#x8005;rmse&#x548C;mae
+    :return:
+    &apos;&apos;&apos;</span>
+
+    <span class="token keyword">def</span> <span class="token function">rmse</span><span class="token punctuation">(</span>predict_results<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;
+        rmse&#x8BC4;&#x4F30;&#x6307;&#x6807;
+        :param predict_results:
+        :return: rmse
+        &apos;&apos;&apos;</span>
+        length <span class="token operator">=</span> <span class="token number">0</span>
+        _rmse_sum <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> uid<span class="token punctuation">,</span> iid<span class="token punctuation">,</span> real_rating<span class="token punctuation">,</span> pred_rating <span class="token keyword">in</span> predict_results<span class="token punctuation">:</span>
+            length <span class="token operator">+=</span> <span class="token number">1</span>
+            _rmse_sum <span class="token operator">+=</span> <span class="token punctuation">(</span>pred_rating <span class="token operator">-</span> real_rating<span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">2</span>
+        <span class="token keyword">return</span> <span class="token builtin">round</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span>_rmse_sum <span class="token operator">/</span> length<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">mae</span><span class="token punctuation">(</span>predict_results<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;
+        mae&#x8BC4;&#x4F30;&#x6307;&#x6807;
+        :param predict_results:
+        :return: mae
+        &apos;&apos;&apos;</span>
+        length <span class="token operator">=</span> <span class="token number">0</span>
+        _mae_sum <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> uid<span class="token punctuation">,</span> iid<span class="token punctuation">,</span> real_rating<span class="token punctuation">,</span> pred_rating <span class="token keyword">in</span> predict_results<span class="token punctuation">:</span>
+            length <span class="token operator">+=</span> <span class="token number">1</span>
+            _mae_sum <span class="token operator">+=</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>pred_rating <span class="token operator">-</span> real_rating<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token builtin">round</span><span class="token punctuation">(</span>_mae_sum <span class="token operator">/</span> length<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">rmse_mae</span><span class="token punctuation">(</span>predict_results<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;
+        rmse&#x548C;mae&#x8BC4;&#x4F30;&#x6307;&#x6807;
+        :param predict_results:
+        :return: rmse, mae
+        &apos;&apos;&apos;</span>
+        length <span class="token operator">=</span> <span class="token number">0</span>
+        _rmse_sum <span class="token operator">=</span> <span class="token number">0</span>
+        _mae_sum <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> uid<span class="token punctuation">,</span> iid<span class="token punctuation">,</span> real_rating<span class="token punctuation">,</span> pred_rating <span class="token keyword">in</span> predict_results<span class="token punctuation">:</span>
+            length <span class="token operator">+=</span> <span class="token number">1</span>
+            _rmse_sum <span class="token operator">+=</span> <span class="token punctuation">(</span>pred_rating <span class="token operator">-</span> real_rating<span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">2</span>
+            _mae_sum <span class="token operator">+=</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>pred_rating <span class="token operator">-</span> real_rating<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token builtin">round</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span>_rmse_sum <span class="token operator">/</span> length<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">round</span><span class="token punctuation">(</span>_mae_sum <span class="token operator">/</span> length<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> method<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">&quot;rmse&quot;</span><span class="token punctuation">:</span>
+        rmse<span class="token punctuation">(</span>predict_results<span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> method<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">&quot;mae&quot;</span><span class="token punctuation">:</span>
+        mae<span class="token punctuation">(</span>predict_results<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> rmse_mae<span class="token punctuation">(</span>predict_results<span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">BaselineCFBySGD</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> number_epochs<span class="token punctuation">,</span> alpha<span class="token punctuation">,</span> reg<span class="token punctuation">,</span> columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&quot;uid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;iid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;rating&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># &#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6700;&#x9AD8;&#x8FED;&#x4EE3;&#x6B21;&#x6570;</span>
+        self<span class="token punctuation">.</span>number_epochs <span class="token operator">=</span> number_epochs
+        <span class="token comment"># &#x5B66;&#x4E60;&#x7387;</span>
+        self<span class="token punctuation">.</span>alpha <span class="token operator">=</span> alpha
+        <span class="token comment"># &#x6B63;&#x5219;&#x53C2;&#x6570;</span>
+        self<span class="token punctuation">.</span>reg <span class="token operator">=</span> reg
+        <span class="token comment"># &#x6570;&#x636E;&#x96C6;&#x4E2D;user-item-rating&#x5B57;&#x6BB5;&#x7684;&#x540D;&#x79F0;</span>
+        self<span class="token punctuation">.</span>columns <span class="token operator">=</span> columns
+
+    <span class="token keyword">def</span> <span class="token function">fit</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> dataset<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;
+        :param dataset: uid, iid, rating
+        :return:
+        &apos;&apos;&apos;</span>
+        self<span class="token punctuation">.</span>dataset <span class="token operator">=</span> dataset
+        <span class="token comment"># &#x7528;&#x6237;&#x8BC4;&#x5206;&#x6570;&#x636E;</span>
+        self<span class="token punctuation">.</span>users_ratings <span class="token operator">=</span> dataset<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span>self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>agg<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">list</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">[</span>self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+        <span class="token comment"># &#x7269;&#x54C1;&#x8BC4;&#x5206;&#x6570;&#x636E;</span>
+        self<span class="token punctuation">.</span>items_ratings <span class="token operator">=</span> dataset<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span>self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>agg<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">list</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">[</span>self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+        <span class="token comment"># &#x8BA1;&#x7B97;&#x5168;&#x5C40;&#x5E73;&#x5747;&#x5206;</span>
+        self<span class="token punctuation">.</span>global_mean <span class="token operator">=</span> self<span class="token punctuation">.</span>dataset<span class="token punctuation">[</span>self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment"># &#x8C03;&#x7528;sgd&#x65B9;&#x6CD5;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;&#x53C2;&#x6570;</span>
+        self<span class="token punctuation">.</span>bu<span class="token punctuation">,</span> self<span class="token punctuation">.</span>bi <span class="token operator">=</span> self<span class="token punctuation">.</span>sgd<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">sgd</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;
+        &#x5229;&#x7528;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#xFF0C;&#x4F18;&#x5316;bu&#xFF0C;bi&#x7684;&#x503C;
+        :return: bu, bi
+        &apos;&apos;&apos;</span>
+        <span class="token comment"># &#x521D;&#x59CB;&#x5316;bu&#x3001;bi&#x7684;&#x503C;&#xFF0C;&#x5168;&#x90E8;&#x8BBE;&#x4E3A;0</span>
+        bu <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token builtin">zip</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>users_ratings<span class="token punctuation">.</span>index<span class="token punctuation">,</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>users_ratings<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        bi <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token builtin">zip</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>items_ratings<span class="token punctuation">.</span>index<span class="token punctuation">,</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>items_ratings<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>number_epochs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;iter%d&quot;</span> <span class="token operator">%</span> i<span class="token punctuation">)</span>
+            <span class="token keyword">for</span> uid<span class="token punctuation">,</span> iid<span class="token punctuation">,</span> real_rating <span class="token keyword">in</span> self<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>itertuples<span class="token punctuation">(</span>index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                error <span class="token operator">=</span> real_rating <span class="token operator">-</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>global_mean <span class="token operator">+</span> bu<span class="token punctuation">[</span>uid<span class="token punctuation">]</span> <span class="token operator">+</span> bi<span class="token punctuation">[</span>iid<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+                bu<span class="token punctuation">[</span>uid<span class="token punctuation">]</span> <span class="token operator">+=</span> self<span class="token punctuation">.</span>alpha <span class="token operator">*</span> <span class="token punctuation">(</span>error <span class="token operator">-</span> self<span class="token punctuation">.</span>reg <span class="token operator">*</span> bu<span class="token punctuation">[</span>uid<span class="token punctuation">]</span><span class="token punctuation">)</span>
+                bi<span class="token punctuation">[</span>iid<span class="token punctuation">]</span> <span class="token operator">+=</span> self<span class="token punctuation">.</span>alpha <span class="token operator">*</span> <span class="token punctuation">(</span>error <span class="token operator">-</span> self<span class="token punctuation">.</span>reg <span class="token operator">*</span> bi<span class="token punctuation">[</span>iid<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">return</span> bu<span class="token punctuation">,</span> bi
+
+    <span class="token keyword">def</span> <span class="token function">predict</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> uid<span class="token punctuation">,</span> iid<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;&#x8BC4;&#x5206;&#x9884;&#x6D4B;&apos;&apos;&apos;</span>
+        <span class="token keyword">if</span> iid <span class="token keyword">not</span> <span class="token keyword">in</span> self<span class="token punctuation">.</span>items_ratings<span class="token punctuation">.</span>index<span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">&quot;&#x65E0;&#x6CD5;&#x9884;&#x6D4B;&#x7528;&#x6237;&lt;{uid}&gt;&#x5BF9;&#x7535;&#x5F71;&lt;{iid}&gt;&#x7684;&#x8BC4;&#x5206;&#xFF0C;&#x56E0;&#x4E3A;&#x8BAD;&#x7EC3;&#x96C6;&#x4E2D;&#x7F3A;&#x5931;&lt;{iid}&gt;&#x7684;&#x6570;&#x636E;&quot;</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>uid<span class="token operator">=</span>uid<span class="token punctuation">,</span> iid<span class="token operator">=</span>iid<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+        predict_rating <span class="token operator">=</span> self<span class="token punctuation">.</span>global_mean <span class="token operator">+</span> self<span class="token punctuation">.</span>bu<span class="token punctuation">[</span>uid<span class="token punctuation">]</span> <span class="token operator">+</span> self<span class="token punctuation">.</span>bi<span class="token punctuation">[</span>iid<span class="token punctuation">]</span>
+        <span class="token keyword">return</span> predict_rating
+
+    <span class="token keyword">def</span> <span class="token function">test</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>testset<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;&#x9884;&#x6D4B;&#x6D4B;&#x8BD5;&#x96C6;&#x6570;&#x636E;&apos;&apos;&apos;</span>
+        <span class="token keyword">for</span> uid<span class="token punctuation">,</span> iid<span class="token punctuation">,</span> real_rating <span class="token keyword">in</span> testset<span class="token punctuation">.</span>itertuples<span class="token punctuation">(</span>index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">try</span><span class="token punctuation">:</span>
+                pred_rating <span class="token operator">=</span> self<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>uid<span class="token punctuation">,</span> iid<span class="token punctuation">)</span>
+            <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token keyword">yield</span> uid<span class="token punctuation">,</span> iid<span class="token punctuation">,</span> real_rating<span class="token punctuation">,</span> pred_rating
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&apos;__main__&apos;</span><span class="token punctuation">:</span>
+
+    trainset<span class="token punctuation">,</span> testset <span class="token operator">=</span> data_split<span class="token punctuation">(</span><span class="token string">&quot;datasets/ml-latest-small/ratings.csv&quot;</span><span class="token punctuation">,</span> random<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+    bcf <span class="token operator">=</span> BaselineCFBySGD<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;userId&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;movieId&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;rating&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    bcf<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>trainset<span class="token punctuation">)</span>
+
+    pred_results <span class="token operator">=</span> bcf<span class="token punctuation">.</span>test<span class="token punctuation">(</span>testset<span class="token punctuation">)</span>
+
+    rmse<span class="token punctuation">,</span> mae <span class="token operator">=</span> accuray<span class="token punctuation">(</span>pred_results<span class="token punctuation">)</span>
+
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;rmse: &quot;</span><span class="token punctuation">,</span> rmse<span class="token punctuation">,</span> <span class="token string">&quot;mae: &quot;</span><span class="token punctuation">,</span> mae<span class="token punctuation">)</span>
+</code></pre>
+<h4 id="&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x4F18;&#x5316;"><a name="&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x4F18;&#x5316;" class="anchor-navigation-ex-anchor" href="#&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x4F18;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x4F18;&#x5316;" class="plugin-anchor" href="#&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x4F18;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x4F18;&#x5316;</h4>
+<p>&#x4F7F;&#x7528;&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x4F18;&#x5316;&#x7B97;&#x6CD5;&#x9884;&#x6D4B;Baseline&#x504F;&#x7F6E;&#x503C;</p>
+<h6 id="step-1-&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x63A8;&#x5BFC;"><a name="step-1-&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x63A8;&#x5BFC;" class="anchor-navigation-ex-anchor" href="#step-1-&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x63A8;&#x5BFC;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="step-1-&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x63A8;&#x5BFC;" class="plugin-anchor" href="#step-1-&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x63A8;&#x5BFC;"><i class="fa fa-link" aria-hidden="true"></i></a>step 1: &#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x63A8;&#x5BFC;</h6>
+<p>&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x548C;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x4E00;&#x6837;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x6C42;&#x6781;&#x503C;&#x3002;</p>
+<p><strong>&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x601D;&#x60F3;&#xFF1A;&#x5BF9;&#x635F;&#x5931;&#x51FD;&#x6570;&#x6C42;&#x504F;&#x5BFC;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x4F7F;&#x504F;&#x5BFC;&#x4E3A;0</strong></p>
+<p>&#x540C;&#x6837;&#xFF0C;&#x635F;&#x5931;&#x51FD;&#x6570;&#xFF1A;<br><script type="math/tex; ">
+J(\theta)=\sum_{u,i\in R}(r_{ui}-\mu-b_u-b_i)^2 + \lambda*(\sum_u {b_u}^2 + \sum_i {b_i}^2)
+</script></p>
+<p>&#x5BF9;&#x635F;&#x5931;&#x51FD;&#x6570;&#x6C42;&#x504F;&#x5BFC;&#xFF1A;<br><script type="math/tex; ">
+\dfrac{\partial}{\partial b_u} f(b_u, b_i) =-2 \sum_{u,i\in R}(r_{ui}-\mu-b_u-b_i) + 2\lambda * b_u
+</script></p>
+<p>&#x4EE4;&#x504F;&#x5BFC;&#x4E3A;0&#xFF0C;&#x5219;&#x53EF;&#x5F97;&#xFF1A;<br><script type="math/tex; ">
+\begin{aligned}
+&\sum_{u,i\in R}(r_{ui}-\mu-b_u-b_i) = \lambda* b_u \\
+&\sum_{u,i\in R}(r_{ui}-\mu-b_i) = \sum_{u,i\in R} b_u+\lambda * b_u
+\end{aligned}
+</script></p>
+<p>&#x4E3A;&#x4E86;&#x7B80;&#x5316;&#x516C;&#x5F0F;&#xFF0C;&#x8FD9;&#x91CC;&#x4EE4;<script type="math/tex; ">\sum_{u,i\in R} b_u \approx |R(u)|*b_u</script>&#xFF0C;&#x5373;&#x76F4;&#x63A5;&#x5047;&#x8BBE;&#x6BCF;&#x4E00;&#x9879;&#x7684;&#x504F;&#x7F6E;&#x90FD;&#x76F8;&#x7B49;&#xFF0C;&#x53EF;&#x5F97;&#xFF1A;<br><script type="math/tex; ">
+b_u := \dfrac {\sum_{u,i\in R}(r_{ui}-\mu-b_i)}{\lambda_1 + |R(u)|}
+</script></p>
+<p>&#x5176;&#x4E2D;<script type="math/tex; ">|R(u)|</script>&#x8868;&#x793A;&#x7528;&#x6237;<script type="math/tex; ">u</script>&#x7684;&#x6709;&#x8FC7;&#x8BC4;&#x5206;&#x6570;&#x91CF;</p>
+<p>&#x540C;&#x7406;&#x53EF;&#x5F97;&#xFF1A;<br><script type="math/tex; ">
+b_i := \dfrac {\sum_{u,i\in R}(r_{ui}-\mu-b_u)}{\lambda_2 + |R(i)|}
+</script></p>
+<p>&#x5176;&#x4E2D;<script type="math/tex; ">|R(i)|</script>&#x8868;&#x793A;&#x7269;&#x54C1;<script type="math/tex; ">i</script>&#x6536;&#x5230;&#x7684;&#x8BC4;&#x5206;&#x6570;&#x91CF;</p>
+<p><script type="math/tex; ">b_u</script>&#x548C;<script type="math/tex; ">b_i</script>&#x5206;&#x522B;&#x5C5E;&#x4E8E;&#x7528;&#x6237;&#x548C;&#x7269;&#x54C1;&#x7684;&#x504F;&#x7F6E;&#xFF0C;&#x56E0;&#x6B64;&#x4ED6;&#x4EEC;&#x7684;&#x6B63;&#x5219;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x5206;&#x522B;&#x8BBE;&#x7F6E;&#x4E24;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x53C2;&#x6570;</p>
+<h6 id="step-2-&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x5E94;&#x7528;"><a name="step-2-&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x5E94;&#x7528;" class="anchor-navigation-ex-anchor" href="#step-2-&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x5E94;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="step-2-&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x5E94;&#x7528;" class="plugin-anchor" href="#step-2-&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x5E94;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>step 2: &#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x5E94;&#x7528;</h6>
+<p>&#x901A;&#x8FC7;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x63A8;&#x5BFC;&#xFF0C;&#x6211;&#x4EEC;&#x6700;&#x7EC8;&#x5206;&#x522B;&#x5F97;&#x5230;&#x4E86;<script type="math/tex; ">b_u</script>&#x548C;<script type="math/tex; ">b_i</script>&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x4F46;&#x4ED6;&#x4EEC;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x5374;&#x53C8;&#x5404;&#x81EA;&#x5305;&#x542B;&#x5BF9;&#x65B9;&#xFF0C;&#x56E0;&#x6B64;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5C06;&#x5229;&#x7528;&#x4E00;&#x79CD;&#x53EB;&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x8BA1;&#x7B97;&#x4ED6;&#x4EEC;&#x7684;&#x503C;&#xFF1A;    </p>
+<ul>
+<li>&#x8BA1;&#x7B97;&#x5176;&#x4E2D;&#x4E00;&#x9879;&#xFF0C;&#x5148;&#x56FA;&#x5B9A;&#x5176;&#x4ED6;&#x672A;&#x77E5;&#x53C2;&#x6570;&#xFF0C;&#x5373;&#x770B;&#x4F5C;&#x5176;&#x4ED6;&#x672A;&#x77E5;&#x53C2;&#x6570;&#x4E3A;&#x5DF2;&#x77E5;</li>
+<li>&#x5982;&#x6C42;<script type="math/tex; ">b_u</script>&#x65F6;&#xFF0C;&#x5C06;<script type="math/tex; ">b_i</script>&#x770B;&#x4F5C;&#x662F;&#x5DF2;&#x77E5;&#xFF1B;&#x6C42;<script type="math/tex; ">b_i</script>&#x65F6;&#xFF0C;&#x5C06;<script type="math/tex; ">b_u</script>&#x770B;&#x4F5C;&#x662F;&#x5DF2;&#x77E5;&#xFF1B;&#x5982;&#x6B64;&#x53CD;&#x590D;&#x4EA4;&#x66FF;&#xFF0C;&#x4E0D;&#x65AD;&#x66F4;&#x65B0;&#x4E8C;&#x8005;&#x7684;&#x503C;&#xFF0C;&#x6C42;&#x5F97;&#x6700;&#x7EC8;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x8FD9;&#x5C31;&#x662F;<strong>&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#xFF08;ALS&#xFF09;</strong></li>
+</ul>
+<h6 id="step-3-&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;"><a name="step-3-&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#step-3-&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="step-3-&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;" class="plugin-anchor" href="#step-3-&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>step 3: &#x7B97;&#x6CD5;&#x5B9E;&#x73B0;</h6>
+<pre class="language-"><code class="lang-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+
+<span class="token keyword">class</span> <span class="token class-name">BaselineCFByALS</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> number_epochs<span class="token punctuation">,</span> reg_bu<span class="token punctuation">,</span> reg_bi<span class="token punctuation">,</span> columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&quot;uid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;iid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;rating&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># &#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6700;&#x9AD8;&#x8FED;&#x4EE3;&#x6B21;&#x6570;</span>
+        self<span class="token punctuation">.</span>number_epochs <span class="token operator">=</span> number_epochs
+        <span class="token comment"># bu&#x7684;&#x6B63;&#x5219;&#x53C2;&#x6570;</span>
+        self<span class="token punctuation">.</span>reg_bu <span class="token operator">=</span> reg_bu
+        <span class="token comment"># bi&#x7684;&#x6B63;&#x5219;&#x53C2;&#x6570;</span>
+        self<span class="token punctuation">.</span>reg_bi <span class="token operator">=</span> reg_bi
+        <span class="token comment"># &#x6570;&#x636E;&#x96C6;&#x4E2D;user-item-rating&#x5B57;&#x6BB5;&#x7684;&#x540D;&#x79F0;</span>
+        self<span class="token punctuation">.</span>columns <span class="token operator">=</span> columns
+
+    <span class="token keyword">def</span> <span class="token function">fit</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> dataset<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;
+        :param dataset: uid, iid, rating
+        :return:
+        &apos;&apos;&apos;</span>
+        self<span class="token punctuation">.</span>dataset <span class="token operator">=</span> dataset
+        <span class="token comment"># &#x7528;&#x6237;&#x8BC4;&#x5206;&#x6570;&#x636E;</span>
+        self<span class="token punctuation">.</span>users_ratings <span class="token operator">=</span> dataset<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span>self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>agg<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">list</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">[</span>self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+        <span class="token comment"># &#x7269;&#x54C1;&#x8BC4;&#x5206;&#x6570;&#x636E;</span>
+        self<span class="token punctuation">.</span>items_ratings <span class="token operator">=</span> dataset<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span>self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>agg<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">list</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">[</span>self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+        <span class="token comment"># &#x8BA1;&#x7B97;&#x5168;&#x5C40;&#x5E73;&#x5747;&#x5206;</span>
+        self<span class="token punctuation">.</span>global_mean <span class="token operator">=</span> self<span class="token punctuation">.</span>dataset<span class="token punctuation">[</span>self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment"># &#x8C03;&#x7528;sgd&#x65B9;&#x6CD5;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;&#x53C2;&#x6570;</span>
+        self<span class="token punctuation">.</span>bu<span class="token punctuation">,</span> self<span class="token punctuation">.</span>bi <span class="token operator">=</span> self<span class="token punctuation">.</span>als<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">als</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;
+        &#x5229;&#x7528;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#xFF0C;&#x4F18;&#x5316;bu&#xFF0C;bi&#x7684;&#x503C;
+        :return: bu, bi
+        &apos;&apos;&apos;</span>
+        <span class="token comment"># &#x521D;&#x59CB;&#x5316;bu&#x3001;bi&#x7684;&#x503C;&#xFF0C;&#x5168;&#x90E8;&#x8BBE;&#x4E3A;0</span>
+        bu <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token builtin">zip</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>users_ratings<span class="token punctuation">.</span>index<span class="token punctuation">,</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>users_ratings<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        bi <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token builtin">zip</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>items_ratings<span class="token punctuation">.</span>index<span class="token punctuation">,</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>items_ratings<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>number_epochs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;iter%d&quot;</span> <span class="token operator">%</span> i<span class="token punctuation">)</span>
+            <span class="token keyword">for</span> iid<span class="token punctuation">,</span> uids<span class="token punctuation">,</span> ratings <span class="token keyword">in</span> self<span class="token punctuation">.</span>items_ratings<span class="token punctuation">.</span>itertuples<span class="token punctuation">(</span>index<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                _sum <span class="token operator">=</span> <span class="token number">0</span>
+                <span class="token keyword">for</span> uid<span class="token punctuation">,</span> rating <span class="token keyword">in</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>uids<span class="token punctuation">,</span> ratings<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    _sum <span class="token operator">+=</span> rating <span class="token operator">-</span> self<span class="token punctuation">.</span>global_mean <span class="token operator">-</span> bu<span class="token punctuation">[</span>uid<span class="token punctuation">]</span>
+                bi<span class="token punctuation">[</span>iid<span class="token punctuation">]</span> <span class="token operator">=</span> _sum <span class="token operator">/</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>reg_bi <span class="token operator">+</span> <span class="token builtin">len</span><span class="token punctuation">(</span>uids<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+            <span class="token keyword">for</span> uid<span class="token punctuation">,</span> iids<span class="token punctuation">,</span> ratings <span class="token keyword">in</span> self<span class="token punctuation">.</span>users_ratings<span class="token punctuation">.</span>itertuples<span class="token punctuation">(</span>index<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                _sum <span class="token operator">=</span> <span class="token number">0</span>
+                <span class="token keyword">for</span> iid<span class="token punctuation">,</span> rating <span class="token keyword">in</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>iids<span class="token punctuation">,</span> ratings<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    _sum <span class="token operator">+=</span> rating <span class="token operator">-</span> self<span class="token punctuation">.</span>global_mean <span class="token operator">-</span> bi<span class="token punctuation">[</span>iid<span class="token punctuation">]</span>
+                bu<span class="token punctuation">[</span>uid<span class="token punctuation">]</span> <span class="token operator">=</span> _sum <span class="token operator">/</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>reg_bu <span class="token operator">+</span> <span class="token builtin">len</span><span class="token punctuation">(</span>iids<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> bu<span class="token punctuation">,</span> bi
+
+    <span class="token keyword">def</span> <span class="token function">predict</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> uid<span class="token punctuation">,</span> iid<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        predict_rating <span class="token operator">=</span> self<span class="token punctuation">.</span>global_mean <span class="token operator">+</span> self<span class="token punctuation">.</span>bu<span class="token punctuation">[</span>uid<span class="token punctuation">]</span> <span class="token operator">+</span> self<span class="token punctuation">.</span>bi<span class="token punctuation">[</span>iid<span class="token punctuation">]</span>
+        <span class="token keyword">return</span> predict_rating
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&apos;__main__&apos;</span><span class="token punctuation">:</span>
+    dtype <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">&quot;userId&quot;</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>int32<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;movieId&quot;</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>int32<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;rating&quot;</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>float32<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    dataset <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">&quot;datasets/ml-latest-small/ratings.csv&quot;</span><span class="token punctuation">,</span> usecols<span class="token operator">=</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token builtin">dict</span><span class="token punctuation">(</span>dtype<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    bcf <span class="token operator">=</span> BaselineCFByALS<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;userId&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;movieId&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;rating&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    bcf<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>dataset<span class="token punctuation">)</span>
+
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        uid <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&quot;uid: &quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        iid <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&quot;iid: &quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>bcf<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>uid<span class="token punctuation">,</span> iid<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<h6 id="step-4-&#x51C6;&#x786E;&#x6027;&#x6307;&#x6807;&#x8BC4;&#x4F30;_1"><a name="step-4-&#x51C6;&#x786E;&#x6027;&#x6307;&#x6807;&#x8BC4;&#x4F30;_1" class="anchor-navigation-ex-anchor" href="#step-4-&#x51C6;&#x786E;&#x6027;&#x6307;&#x6807;&#x8BC4;&#x4F30;_1"><i class="fa fa-link" aria-hidden="true"></i></a><a name="step-4-&#x51C6;&#x786E;&#x6027;&#x6307;&#x6807;&#x8BC4;&#x4F30;" class="plugin-anchor" href="#step-4-&#x51C6;&#x786E;&#x6027;&#x6307;&#x6807;&#x8BC4;&#x4F30;"><i class="fa fa-link" aria-hidden="true"></i></a>Step 4: &#x51C6;&#x786E;&#x6027;&#x6307;&#x6807;&#x8BC4;&#x4F30;</h6>
+<pre class="language-"><code class="lang-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+<span class="token keyword">def</span> <span class="token function">data_split</span><span class="token punctuation">(</span>data_path<span class="token punctuation">,</span> x<span class="token operator">=</span><span class="token number">0.8</span><span class="token punctuation">,</span> random<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&apos;&apos;&apos;
+    &#x5207;&#x5206;&#x6570;&#x636E;&#x96C6;&#xFF0C; &#x8FD9;&#x91CC;&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x7528;&#x6237;&#x6570;&#x91CF;&#x4FDD;&#x6301;&#x4E0D;&#x53D8;&#xFF0C;&#x5C06;&#x6BCF;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x8BC4;&#x5206;&#x6570;&#x636E;&#x6309;&#x6BD4;&#x4F8B;&#x8FDB;&#x884C;&#x62C6;&#x5206;
+    :param data_path: &#x6570;&#x636E;&#x96C6;&#x8DEF;&#x5F84;
+    :param x: &#x8BAD;&#x7EC3;&#x96C6;&#x7684;&#x6BD4;&#x4F8B;&#xFF0C;&#x5982;x=0.8&#xFF0C;&#x5219;0.2&#x662F;&#x6D4B;&#x8BD5;&#x96C6;
+    :param random: &#x662F;&#x5426;&#x968F;&#x673A;&#x5207;&#x5206;&#xFF0C;&#x9ED8;&#x8BA4;False
+    :return: &#x7528;&#x6237;-&#x7269;&#x54C1;&#x8BC4;&#x5206;&#x77E9;&#x9635;
+    &apos;&apos;&apos;</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5F00;&#x59CB;&#x5207;&#x5206;&#x6570;&#x636E;&#x96C6;...&quot;</span><span class="token punctuation">)</span>
+    <span class="token comment"># &#x8BBE;&#x7F6E;&#x8981;&#x52A0;&#x8F7D;&#x7684;&#x6570;&#x636E;&#x5B57;&#x6BB5;&#x7684;&#x7C7B;&#x578B;</span>
+    dtype <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">&quot;userId&quot;</span><span class="token punctuation">:</span> np<span class="token punctuation">.</span>int32<span class="token punctuation">,</span> <span class="token string">&quot;movieId&quot;</span><span class="token punctuation">:</span> np<span class="token punctuation">.</span>int32<span class="token punctuation">,</span> <span class="token string">&quot;rating&quot;</span><span class="token punctuation">:</span> np<span class="token punctuation">.</span>float32<span class="token punctuation">}</span>
+    <span class="token comment"># &#x52A0;&#x8F7D;&#x6570;&#x636E;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x7528;&#x524D;&#x4E09;&#x5217;&#x6570;&#x636E;&#xFF0C;&#x5206;&#x522B;&#x662F;&#x7528;&#x6237;ID&#xFF0C;&#x7535;&#x5F71;ID&#xFF0C;&#x5DF2;&#x7ECF;&#x7528;&#x6237;&#x5BF9;&#x7535;&#x5F71;&#x7684;&#x5BF9;&#x5E94;&#x8BC4;&#x5206;</span>
+    ratings <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>data_path<span class="token punctuation">,</span> dtype<span class="token operator">=</span>dtype<span class="token punctuation">,</span> usecols<span class="token operator">=</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    testset_index <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token comment"># &#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x6BCF;&#x4E2A;&#x7528;&#x6237;&#x5728;&#x6D4B;&#x8BD5;&#x96C6;&#x548C;&#x8BAD;&#x7EC3;&#x96C6;&#x90FD;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x56E0;&#x6B64;&#x6309;userId&#x805A;&#x5408;</span>
+    <span class="token keyword">for</span> uid <span class="token keyword">in</span> ratings<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">&quot;userId&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">any</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>index<span class="token punctuation">:</span>
+        user_rating_data <span class="token operator">=</span> ratings<span class="token punctuation">.</span>where<span class="token punctuation">(</span>ratings<span class="token punctuation">[</span><span class="token string">&quot;userId&quot;</span><span class="token punctuation">]</span><span class="token operator">==</span>uid<span class="token punctuation">)</span><span class="token punctuation">.</span>dropna<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> random<span class="token punctuation">:</span>
+            <span class="token comment"># &#x56E0;&#x4E3A;&#x4E0D;&#x53EF;&#x53D8;&#x7C7B;&#x578B;&#x4E0D;&#x80FD;&#x88AB; shuffle&#x65B9;&#x6CD5;&#x4F5C;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x5F3A;&#x884C;&#x8F6C;&#x6362;&#x4E3A;&#x5217;&#x8868;</span>
+            index <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>user_rating_data<span class="token punctuation">.</span>index<span class="token punctuation">)</span>
+            np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>shuffle<span class="token punctuation">(</span>index<span class="token punctuation">)</span>    <span class="token comment"># &#x6253;&#x4E71;&#x5217;&#x8868;</span>
+            _index <span class="token operator">=</span> <span class="token builtin">round</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>user_rating_data<span class="token punctuation">)</span> <span class="token operator">*</span> x<span class="token punctuation">)</span>
+            testset_index <span class="token operator">+=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>index<span class="token punctuation">[</span>_index<span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token comment"># &#x5C06;&#x6BCF;&#x4E2A;&#x7528;&#x6237;&#x7684;x&#x6BD4;&#x4F8B;&#x7684;&#x6570;&#x636E;&#x4F5C;&#x4E3A;&#x8BAD;&#x7EC3;&#x96C6;&#xFF0C;&#x5269;&#x4F59;&#x7684;&#x4F5C;&#x4E3A;&#x6D4B;&#x8BD5;&#x96C6;</span>
+            index <span class="token operator">=</span> <span class="token builtin">round</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>user_rating_data<span class="token punctuation">)</span> <span class="token operator">*</span> x<span class="token punctuation">)</span>
+            testset_index <span class="token operator">+=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>user_rating_data<span class="token punctuation">.</span>index<span class="token punctuation">.</span>values<span class="token punctuation">[</span>index<span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+    testset <span class="token operator">=</span> ratings<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>testset_index<span class="token punctuation">]</span>
+    trainset <span class="token operator">=</span> ratings<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>testset_index<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5B8C;&#x6210;&#x6570;&#x636E;&#x96C6;&#x5207;&#x5206;...&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> trainset<span class="token punctuation">,</span> testset
+
+<span class="token keyword">def</span> <span class="token function">accuray</span><span class="token punctuation">(</span>predict_results<span class="token punctuation">,</span> method<span class="token operator">=</span><span class="token string">&quot;all&quot;</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&apos;&apos;&apos;
+    &#x51C6;&#x786E;&#x6027;&#x6307;&#x6807;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;
+    :param predict_results: &#x9884;&#x6D4B;&#x7ED3;&#x679C;&#xFF0C;&#x7C7B;&#x578B;&#x4E3A;&#x5BB9;&#x5668;&#xFF0C;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A;&#x5305;&#x542B;uid,iid,real_rating,pred_rating&#x7684;&#x5E8F;&#x5217;
+    :param method: &#x6307;&#x6807;&#x65B9;&#x6CD5;&#xFF0C;&#x7C7B;&#x578B;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;rmse&#x6216;mae&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;&#x4E24;&#x8005;rmse&#x548C;mae
+    :return:
+    &apos;&apos;&apos;</span>
+
+    <span class="token keyword">def</span> <span class="token function">rmse</span><span class="token punctuation">(</span>predict_results<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;
+        rmse&#x8BC4;&#x4F30;&#x6307;&#x6807;
+        :param predict_results:
+        :return: rmse
+        &apos;&apos;&apos;</span>
+        length <span class="token operator">=</span> <span class="token number">0</span>
+        _rmse_sum <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> uid<span class="token punctuation">,</span> iid<span class="token punctuation">,</span> real_rating<span class="token punctuation">,</span> pred_rating <span class="token keyword">in</span> predict_results<span class="token punctuation">:</span>
+            length <span class="token operator">+=</span> <span class="token number">1</span>
+            _rmse_sum <span class="token operator">+=</span> <span class="token punctuation">(</span>pred_rating <span class="token operator">-</span> real_rating<span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">2</span>
+        <span class="token keyword">return</span> <span class="token builtin">round</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span>_rmse_sum <span class="token operator">/</span> length<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">mae</span><span class="token punctuation">(</span>predict_results<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;
+        mae&#x8BC4;&#x4F30;&#x6307;&#x6807;
+        :param predict_results:
+        :return: mae
+        &apos;&apos;&apos;</span>
+        length <span class="token operator">=</span> <span class="token number">0</span>
+        _mae_sum <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> uid<span class="token punctuation">,</span> iid<span class="token punctuation">,</span> real_rating<span class="token punctuation">,</span> pred_rating <span class="token keyword">in</span> predict_results<span class="token punctuation">:</span>
+            length <span class="token operator">+=</span> <span class="token number">1</span>
+            _mae_sum <span class="token operator">+=</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>pred_rating <span class="token operator">-</span> real_rating<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token builtin">round</span><span class="token punctuation">(</span>_mae_sum <span class="token operator">/</span> length<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">rmse_mae</span><span class="token punctuation">(</span>predict_results<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;
+        rmse&#x548C;mae&#x8BC4;&#x4F30;&#x6307;&#x6807;
+        :param predict_results:
+        :return: rmse, mae
+        &apos;&apos;&apos;</span>
+        length <span class="token operator">=</span> <span class="token number">0</span>
+        _rmse_sum <span class="token operator">=</span> <span class="token number">0</span>
+        _mae_sum <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> uid<span class="token punctuation">,</span> iid<span class="token punctuation">,</span> real_rating<span class="token punctuation">,</span> pred_rating <span class="token keyword">in</span> predict_results<span class="token punctuation">:</span>
+            length <span class="token operator">+=</span> <span class="token number">1</span>
+            _rmse_sum <span class="token operator">+=</span> <span class="token punctuation">(</span>pred_rating <span class="token operator">-</span> real_rating<span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">2</span>
+            _mae_sum <span class="token operator">+=</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>pred_rating <span class="token operator">-</span> real_rating<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token builtin">round</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span>_rmse_sum <span class="token operator">/</span> length<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">round</span><span class="token punctuation">(</span>_mae_sum <span class="token operator">/</span> length<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> method<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">&quot;rmse&quot;</span><span class="token punctuation">:</span>
+        rmse<span class="token punctuation">(</span>predict_results<span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> method<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">&quot;mae&quot;</span><span class="token punctuation">:</span>
+        mae<span class="token punctuation">(</span>predict_results<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> rmse_mae<span class="token punctuation">(</span>predict_results<span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">BaselineCFByALS</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> number_epochs<span class="token punctuation">,</span> reg_bu<span class="token punctuation">,</span> reg_bi<span class="token punctuation">,</span> columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&quot;uid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;iid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;rating&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># &#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6700;&#x9AD8;&#x8FED;&#x4EE3;&#x6B21;&#x6570;</span>
+        self<span class="token punctuation">.</span>number_epochs <span class="token operator">=</span> number_epochs
+        <span class="token comment"># bu&#x7684;&#x6B63;&#x5219;&#x53C2;&#x6570;</span>
+        self<span class="token punctuation">.</span>reg_bu <span class="token operator">=</span> reg_bu
+        <span class="token comment"># bi&#x7684;&#x6B63;&#x5219;&#x53C2;&#x6570;</span>
+        self<span class="token punctuation">.</span>reg_bi <span class="token operator">=</span> reg_bi
+        <span class="token comment"># &#x6570;&#x636E;&#x96C6;&#x4E2D;user-item-rating&#x5B57;&#x6BB5;&#x7684;&#x540D;&#x79F0;</span>
+        self<span class="token punctuation">.</span>columns <span class="token operator">=</span> columns
+
+    <span class="token keyword">def</span> <span class="token function">fit</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> dataset<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;
+        :param dataset: uid, iid, rating
+        :return:
+        &apos;&apos;&apos;</span>
+        self<span class="token punctuation">.</span>dataset <span class="token operator">=</span> dataset
+        <span class="token comment"># &#x7528;&#x6237;&#x8BC4;&#x5206;&#x6570;&#x636E;</span>
+        self<span class="token punctuation">.</span>users_ratings <span class="token operator">=</span> dataset<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span>self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>agg<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">list</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">[</span>self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+        <span class="token comment"># &#x7269;&#x54C1;&#x8BC4;&#x5206;&#x6570;&#x636E;</span>
+        self<span class="token punctuation">.</span>items_ratings <span class="token operator">=</span> dataset<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span>self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>agg<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">list</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">[</span>self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+        <span class="token comment"># &#x8BA1;&#x7B97;&#x5168;&#x5C40;&#x5E73;&#x5747;&#x5206;</span>
+        self<span class="token punctuation">.</span>global_mean <span class="token operator">=</span> self<span class="token punctuation">.</span>dataset<span class="token punctuation">[</span>self<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment"># &#x8C03;&#x7528;sgd&#x65B9;&#x6CD5;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;&#x53C2;&#x6570;</span>
+        self<span class="token punctuation">.</span>bu<span class="token punctuation">,</span> self<span class="token punctuation">.</span>bi <span class="token operator">=</span> self<span class="token punctuation">.</span>als<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">als</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;
+        &#x5229;&#x7528;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#xFF0C;&#x4F18;&#x5316;bu&#xFF0C;bi&#x7684;&#x503C;
+        :return: bu, bi
+        &apos;&apos;&apos;</span>
+        <span class="token comment"># &#x521D;&#x59CB;&#x5316;bu&#x3001;bi&#x7684;&#x503C;&#xFF0C;&#x5168;&#x90E8;&#x8BBE;&#x4E3A;0</span>
+        bu <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token builtin">zip</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>users_ratings<span class="token punctuation">.</span>index<span class="token punctuation">,</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>users_ratings<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        bi <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token builtin">zip</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>items_ratings<span class="token punctuation">.</span>index<span class="token punctuation">,</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>items_ratings<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>number_epochs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;iter%d&quot;</span> <span class="token operator">%</span> i<span class="token punctuation">)</span>
+            <span class="token keyword">for</span> iid<span class="token punctuation">,</span> uids<span class="token punctuation">,</span> ratings <span class="token keyword">in</span> self<span class="token punctuation">.</span>items_ratings<span class="token punctuation">.</span>itertuples<span class="token punctuation">(</span>index<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                _sum <span class="token operator">=</span> <span class="token number">0</span>
+                <span class="token keyword">for</span> uid<span class="token punctuation">,</span> rating <span class="token keyword">in</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>uids<span class="token punctuation">,</span> ratings<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    _sum <span class="token operator">+=</span> rating <span class="token operator">-</span> self<span class="token punctuation">.</span>global_mean <span class="token operator">-</span> bu<span class="token punctuation">[</span>uid<span class="token punctuation">]</span>
+                bi<span class="token punctuation">[</span>iid<span class="token punctuation">]</span> <span class="token operator">=</span> _sum <span class="token operator">/</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>reg_bi <span class="token operator">+</span> <span class="token builtin">len</span><span class="token punctuation">(</span>uids<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+            <span class="token keyword">for</span> uid<span class="token punctuation">,</span> iids<span class="token punctuation">,</span> ratings <span class="token keyword">in</span> self<span class="token punctuation">.</span>users_ratings<span class="token punctuation">.</span>itertuples<span class="token punctuation">(</span>index<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                _sum <span class="token operator">=</span> <span class="token number">0</span>
+                <span class="token keyword">for</span> iid<span class="token punctuation">,</span> rating <span class="token keyword">in</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>iids<span class="token punctuation">,</span> ratings<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    _sum <span class="token operator">+=</span> rating <span class="token operator">-</span> self<span class="token punctuation">.</span>global_mean <span class="token operator">-</span> bi<span class="token punctuation">[</span>iid<span class="token punctuation">]</span>
+                bu<span class="token punctuation">[</span>uid<span class="token punctuation">]</span> <span class="token operator">=</span> _sum <span class="token operator">/</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>reg_bu <span class="token operator">+</span> <span class="token builtin">len</span><span class="token punctuation">(</span>iids<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> bu<span class="token punctuation">,</span> bi
+
+    <span class="token keyword">def</span> <span class="token function">predict</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> uid<span class="token punctuation">,</span> iid<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;&#x8BC4;&#x5206;&#x9884;&#x6D4B;&apos;&apos;&apos;</span>
+        <span class="token keyword">if</span> iid <span class="token keyword">not</span> <span class="token keyword">in</span> self<span class="token punctuation">.</span>items_ratings<span class="token punctuation">.</span>index<span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">&quot;&#x65E0;&#x6CD5;&#x9884;&#x6D4B;&#x7528;&#x6237;&lt;{uid}&gt;&#x5BF9;&#x7535;&#x5F71;&lt;{iid}&gt;&#x7684;&#x8BC4;&#x5206;&#xFF0C;&#x56E0;&#x4E3A;&#x8BAD;&#x7EC3;&#x96C6;&#x4E2D;&#x7F3A;&#x5931;&lt;{iid}&gt;&#x7684;&#x6570;&#x636E;&quot;</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>uid<span class="token operator">=</span>uid<span class="token punctuation">,</span> iid<span class="token operator">=</span>iid<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+        predict_rating <span class="token operator">=</span> self<span class="token punctuation">.</span>global_mean <span class="token operator">+</span> self<span class="token punctuation">.</span>bu<span class="token punctuation">[</span>uid<span class="token punctuation">]</span> <span class="token operator">+</span> self<span class="token punctuation">.</span>bi<span class="token punctuation">[</span>iid<span class="token punctuation">]</span>
+        <span class="token keyword">return</span> predict_rating
+
+    <span class="token keyword">def</span> <span class="token function">test</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>testset<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;&#x9884;&#x6D4B;&#x6D4B;&#x8BD5;&#x96C6;&#x6570;&#x636E;&apos;&apos;&apos;</span>
+        <span class="token keyword">for</span> uid<span class="token punctuation">,</span> iid<span class="token punctuation">,</span> real_rating <span class="token keyword">in</span> testset<span class="token punctuation">.</span>itertuples<span class="token punctuation">(</span>index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">try</span><span class="token punctuation">:</span>
+                pred_rating <span class="token operator">=</span> self<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>uid<span class="token punctuation">,</span> iid<span class="token punctuation">)</span>
+            <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token keyword">yield</span> uid<span class="token punctuation">,</span> iid<span class="token punctuation">,</span> real_rating<span class="token punctuation">,</span> pred_rating
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&apos;__main__&apos;</span><span class="token punctuation">:</span>
+    trainset<span class="token punctuation">,</span> testset <span class="token operator">=</span> data_split<span class="token punctuation">(</span><span class="token string">&quot;datasets/ml-latest-small/ratings.csv&quot;</span><span class="token punctuation">,</span> random<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+    bcf <span class="token operator">=</span> BaselineCFByALS<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;userId&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;movieId&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;rating&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    bcf<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>trainset<span class="token punctuation">)</span>
+
+    pred_results <span class="token operator">=</span> bcf<span class="token punctuation">.</span>test<span class="token punctuation">(</span>testset<span class="token punctuation">)</span>
+
+    rmse<span class="token punctuation">,</span> mae <span class="token operator">=</span> accuray<span class="token punctuation">(</span>pred_results<span class="token punctuation">)</span>
+
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;rmse: &quot;</span><span class="token punctuation">,</span> rmse<span class="token punctuation">,</span> <span class="token string">&quot;mae: &quot;</span><span class="token punctuation">,</span> mae<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x51FD;&#x6570;&#x6C42;&#x5BFC;&#xFF1A;</p>
+<p><img src="img/&#x5E38;&#x89C1;&#x51FD;&#x6570;&#x6C42;&#x5BFC;.png" alt=""></p>
+<p><img src="img/&#x5BFC;&#x6570;&#x7684;&#x56DB;&#x5219;&#x8FD0;&#x7B97;.png" alt=""></p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; mine 2000-2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2023-06-09 10:11:36
+</span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02_基于K最近邻的协同过滤推荐.html" class="navigation navigation-prev " aria-label="Previous page: 基于K近邻的协同过滤">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="04_基于矩阵分解的协同过滤推荐.html" class="navigation navigation-next " aria-label="Next page: 基于矩阵分解的协同过滤">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"基于回归模型的协同过滤","level":"2.1.2","depth":2,"next":{"title":"基于矩阵分解的协同过滤","level":"2.1.3","depth":2,"path":"04_基于矩阵分解的协同过滤推荐.md","ref":"04_基于矩阵分解的协同过滤推荐.md","articles":[{"title":"LFM算法实现","level":"2.1.3.1","depth":3,"path":"05_LFM算法实现.md","ref":"05_LFM算法实现.md","articles":[]},{"title":"biasSVD算法实现","level":"2.1.3.2","depth":3,"path":"06_BiasSVD算法实现.md","ref":"06_BiasSVD算法实现.md","articles":[]}]},"previous":{"title":"基于K近邻的协同过滤","level":"2.1.1","depth":2,"path":"02_基于K最近邻的协同过滤推荐.md","ref":"02_基于K最近邻的协同过滤推荐.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","-sharing","sharing-plus","-lunr","-search","search-pro","mathjax","mathjax-pro","-katex","-copy-code-button","code","klipse","-highlight","prism","pageview-count","auto-scroll-table","popup","custom-favicon","scroll-to-top","anchors","insert-logo","todo","expandable-chapters-small","back-to-top-button","tbfed-pagefooter","-page-toc-button","anchor-navigation-ex","page-treeview","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy mine 2000-2020","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"","minHeaderCount":"2","minHeaderDeep":"2"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scroll-to-top":{},"todo":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"showLevelIcon":false,"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"showLevel":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"printLog":false,"multipleH1":false,"multipleH2":false,"associatedWithSummary":true,"multipleH3":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"multipleH4":false},"favicon":"img/self_logo.jpg","theme-comscore":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"pageview-count":{},"custom-favicon":{},"mathjax-pro":{"forceSVG":true,"version":"2.7.7"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"klipse":{"myConfigKey":"it's the default value"},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"insert-logo":{"style":"background: none; max-height: 129px; min-height: 30px","url":"img/self_logo.jpg"}},"theme":"default","author":"feihu han <hfhfn@sina.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"GitBook Handbook","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Gitbook docs":"https://smoothies.com.cn/gitbook-docs/Gitbook/1_Gitbook_Get_Started.html"}},"gitbook":"3.2.3","description":"This is a sample book created by gitbook","extension":null},"file":{"path":"03_基于回归模型的协同过滤推荐.md","mtime":"2023-06-09T10:11:36.018Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-09T10:12:21.097Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-mathjax-pro/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-scroll-to-top/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
